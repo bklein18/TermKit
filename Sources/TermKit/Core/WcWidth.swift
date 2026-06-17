@@ -42,7 +42,7 @@ extension Character {
     public var displayWidth: Int {
         var totalWidth = 0
         for scalar in self.unicodeScalars {
-            let width = termKitWcWidth(scalar.value)
+            let width = termKitWcWidth(Int32(scalar.value))
             if width > 0 {
                 totalWidth += Int(width)
             }
