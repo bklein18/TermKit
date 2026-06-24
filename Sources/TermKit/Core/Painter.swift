@@ -141,7 +141,7 @@ public class Painter {
         }
         // TODO: optimize, we can handle the visibility for rows before and later just do
         // columns rather than testing both.
-        let wcw = termKitWcWidth(rune.value)
+        let wcw = termKitWcWidth(Int32(rune.value))
         let len = wcw >= 0 ? Int32(wcw) : 1
         let npos = pos.x + Int(len)
         
