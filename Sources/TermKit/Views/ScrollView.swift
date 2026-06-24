@@ -296,10 +296,10 @@ open class ScrollView : View {
         let f = bounds
         
         contentView.frame = Rect(
-            x: f.minX,
-            y: f.minY,
-            width: f.width-(_showsVerticalScrollIndicator ? 1 : 0),
-            height: f.height-(_showsHorizontalScrollIndicator ? 1 : 0))
+            x: _contentOffset.x,
+            y: _contentOffset.y,
+            width: max(f.width-(_showsVerticalScrollIndicator ? 1 : 0), contentSize.width),
+            height: max(f.height-(_showsHorizontalScrollIndicator ? 1 : 0), contentSize.height))
         try? contentView.layoutSubviews()
         if _showsVerticalScrollIndicator {
             vertical.frame = Rect (
